@@ -116,3 +116,58 @@ function personWorker (person: {name: string, age: number, salary: number, work:
 
 console.log(personWorker({name: 'Piotr', age: 22, salary: 6000, work: true}))
 
+// 2 przykład obiektu
+
+let cordinate: {x: number, y: number} = {x: 30, y: 20}
+
+console.log(cordinate)
+
+function randomCordinate (): {x: number, y: number} {
+    return { x: Math.random(), y: Math.random()}
+}
+// obiekt jako Alias 
+type Coffee = {
+    milk: string,
+    coffee: string,
+    mug: number
+}
+
+const coffeeDrink = (coffee: Coffee) => {
+    return `Dzisiaj piję kawę: ${coffee.milk} mleka, ${coffee.coffee} kawy w ${coffee.mug} kubku`
+}
+
+console.log(coffeeDrink({milk: '100ml', coffee: '2g', mug: 1}))
+
+// obiekt w obiekcie + funkcja strzałkowa
+const describeMen = (person: {
+    first: string,
+    second: string,
+    age: number,
+    parentsPerson: {
+        mom: string,
+        dad: string
+    }
+}) => {
+    return `Pracownik ${person.first} ${person.second}, który ma ${person.age} lat, ma rodziców ${person.parentsPerson.mom} i ${person.parentsPerson.dad}`
+}
+
+console.log(describeMen({first: "Krzysiek", second: "Kowalski", age: 22, parentsPerson: {mom: "Anna", dad: "Jan"}}))
+
+// obiket w obiekcie z typem + zwykła funkcja 
+
+type Training = {
+    name: string,
+    time: number,
+    person: {
+        name: string,
+        age: number
+    }
+}
+
+function trainingPerson (training: Training) {
+    return `Trening ${training.name} trwał ${training.time} min. Trener: ${training.person.name}, ${training.person.age} lat`
+}
+
+console.log(trainingPerson({name: "Bieganie", time: 45, person: {name: 'Krzysiek', age: 33}}))
+
+
