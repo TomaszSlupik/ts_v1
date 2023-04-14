@@ -170,4 +170,69 @@ function trainingPerson (training: Training) {
 
 console.log(trainingPerson({name: "Bieganie", time: 45, person: {name: 'Krzysiek', age: 33}}))
 
+// Parametr opcjonalny
+type Threenumber = {
+    x: number,
+    y: number,
+    z? : number
+}
 
+const addNumber = (threenumber: Threenumber) => {
+    return threenumber.x + threenumber.y + threenumber.z
+}
+
+
+console.log(addNumber({x: 10, y: 20, z: 20}))
+
+// Parametr tylko do odczytu
+type Clerk = {
+    readonly id: number;
+    name: string;
+}
+
+const clerk: Worker = {
+    id: 1,
+    name: "Franek"
+}
+
+
+// Połączenie typów - obiekty 
+type Circle = {
+    radius: number
+}
+
+type Color = {
+    color: string
+}
+
+type ColorCircle = Circle & Color
+
+const joinColorCircle: ColorCircle = {
+    radius: 10,
+    color: 'gold'
+}
+
+console.log(joinColorCircle)
+
+// Połączenie typów + dodatkowy typ 
+type Cat = {
+    levelTrain: string
+}
+
+type Dog = {
+    breed: string
+}
+
+type CatDog = Cat & Dog & {
+    age: number
+}
+
+const catdog: CatDog = {
+    levelTrain: "hard",
+    breed: "Husky",
+    age: 3
+}
+
+console.log(catdog)
+
+// przykłady - obiekty 
