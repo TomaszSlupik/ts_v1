@@ -190,7 +190,7 @@ type Clerk = {
     name: string;
 }
 
-const clerk: Worker = {
+const clerk: Clerk = {
     id: 1,
     name: "Franek"
 }
@@ -235,4 +235,111 @@ const catdog: CatDog = {
 
 console.log(catdog)
 
-// przykłady - obiekty 
+// przykłady - stworzenie typu z tytułem do odczytu oraz opcjonalnym parametrem 
+// dla originalTitle, obliczenie wartości pomiędzy grossWorldwide a budgetem
+type Movie = {
+    readonly title: string,
+    originalTitle?: string,
+    director: string,
+    relaseYear: number,
+    boxOffice: {
+        budget: number,
+        grossUS: number,
+        grossWorldwide: number
+    }
+}
+
+const dune: Movie = {
+    title: "Dune",
+    originalTitle: "Dune Part One",
+    director: "Denis Villeneuve",
+    relaseYear: 2021,
+    boxOffice: {
+        budget: 165000000,
+        grossUS: 108327830,
+        grossWorldwide: 400671789
+    }
+}
+
+const cats: Movie = {
+    title: "Cats",
+    director: "Tom Hooper",
+    relaseYear: 2019,
+    boxOffice: {
+        budget: 95000000,
+        grossUS: 27166770,
+        grossWorldwide: 73833348
+    }
+}
+
+console.log(dune)
+console.log(cats)
+
+
+function getProfit (el: Movie): number {
+    return el.boxOffice.grossWorldwide - el.boxOffice.budget  
+}
+
+console.log(getProfit(dune))
+console.log(getProfit(cats))
+
+// Tablice - array 
+const activeUsers: string[] = []
+
+activeUsers.push('Tomek')
+
+console.log(activeUsers)
+
+// Tablica - string - alternatywa 
+const dish: Array<string> = ['pierogi', 'naleśniki']
+console.log(dish)
+
+// Tablice - number 
+const numberArr: number[] = [10, 20]
+console.log(numberArr)
+
+// dodanie obiektu do tablicy 
+
+type Point = {
+    x: number,
+    y: number
+}
+
+const square: Point []= []
+
+square.push({x: 22, y: 22})
+
+console.log(square)
+
+// Tablica w tablicy 
+
+const doubleArr: string [][] = [['x', 'y', 'z'], ['a', 'b', 'c']]
+console.log(doubleArr)
+
+// Przykłady - tablica 
+// ćw1 
+const ages: number[] = []
+const agesTwo: Array<number> = []
+
+console.log(ages)
+console.log(agesTwo)
+
+// ćw 2 
+
+const gameBoard: string[][] = []
+console.log(gameBoard)
+
+// cw3 
+
+type Product = {
+    name: string,
+    price: number
+}
+
+const product: Product[] = []
+
+product.push({name: 'coffee mug', price: 11.50})
+
+console.log(product)
+
+
