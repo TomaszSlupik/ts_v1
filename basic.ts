@@ -342,4 +342,144 @@ product.push({name: 'coffee mug', price: 11.50})
 
 console.log(product)
 
+// Union type
+// 1 przykład
+let meals: string | number = 'one'
+meals = 1
+console.log(meals)
+
+// 2 przykład
+type PointSquare = {
+    x: number,
+    y: number
+}
+
+type ScoreSquare = {
+    a: number,
+    b: number
+}
+
+let mysquare: PointSquare | ScoreSquare = {x: 10, y: 20}
+mysquare = {a: 100, b: 100}
+
+console.log(mysquare)
+
+// 3 przykład 
+function printAge (age: number | string) {
+    console.log(`Mam ${age} lat`)
+}
+
+printAge('dwadzieścia')
+printAge(30)
+
+// 4 przykład 
+function calculateProduct (price: number | string, item: number) {
+    if (typeof price === 'string') {
+       
+        console.log( parseFloat(price.replace('$', "")) * item)
+    }
+    else {
+        console.log(price * item)
+    }
+
+}
+
+calculateProduct(10, 30)
+calculateProduct('10$', 30)
+
+// 5 przykład 
+const numberPeople: (number | string) [] = ['jeden', 10, 2, 'trzy']
+console.log(numberPeople)
+
+// LITERAL TYPES
+// 1 przykład
+
+function yourAnswer (answear: "tak" | "nie") {
+    console.log(`Twoja odpowiedź to: ${answear}`)
+}
+
+yourAnswer("tak")
+
+// 2 przykład
+let mood: "happy" | "sad" = "sad"
+mood = "happy"
+
+console.log(mood)
+
+// 3 przykład 
+
+type DayOfWeek = 'poniedziałek' | 'wtorek' | 'środa' | 'czwartek' | 'piątek' | 'sobota' | 'niedziela'
+
+const today: DayOfWeek = 'piątek'
+console.log(today)
+
+// Ćwiczenia 
+// 1
+const highScore: number | boolean = 10
+console.log(highScore)
+
+// 2 
+const stuff: (number | string)[] = [10, 20, 'jeden']
+
+const stuffTwo: number[] | string [] = [20, 30, 40]
+
+console.log(`Tablica pomieszana: [ ${stuff} ]`)
+console.log(`Tablica może mieć tylko stringi lub numbery: [ ${stuffTwo} ]`)
+
+// 3
+type SkillLevel =  "Beginner" | "Intermediate" | "Advanced" | "Expert"
+
+const yourSkillLevel: SkillLevel = "Expert"
+console.log(yourSkillLevel)
+
+// 4
+type SkiSchoolStudent = {
+    name: string,
+    age: number,
+    sport: "ski" | "snowboard",
+    level: SkillLevel
+}
+
+const personStudent: SkiSchoolStudent = {name: "Tom", age: 22, sport: "snowboard", level: "Expert"}
+console.log(personStudent)
+
+// 5
+
+type RGBcolor = {
+    r: number,
+    g: number,
+    b: number
+}
+
+type HSLcolor = {
+    h: number,
+    s: number,
+    l: number
+}
+
+const colorRGBorHSL: (RGBcolor | HSLcolor)[] = []
+
+
+
+// 6
+function greet (name: string | string []) {
+    console.log(`Hello, <${name}>`)
+}
+
+greet(['Leszek', 'Jan'])
+
+
+// Tuple 
+// 1 przykład 
+let myTuples: [number, string]
+
+myTuples = [20, 'Test']
+
+console.log(myTuples)
+
+// 2 przykład 
+const colorShoes: [string, string] = ['red', 'blue']
+
+console.log(colorShoes)
+
 
