@@ -483,3 +483,66 @@ const colorShoes: [string, string] = ['red', 'blue']
 console.log(colorShoes)
 
 
+// 3 przykład 
+type HTTPresponse = [number, string]
+
+const goodResponse: HTTPresponse = [200, "good"]
+
+console.log(goodResponse)
+
+const res: HTTPresponse[] = [[200, "good"], [404, "error"]]
+console.log(res)
+
+// ENUM
+
+enum OrderStatus {
+    PENDING, 
+    SHIPPED,
+    DELIVERED,
+    RETURNED
+}
+
+const myStatus = OrderStatus.DELIVERED
+
+console.log(myStatus)
+
+// 2 przykład 
+
+enum HourTrain {
+    FIRST = 2,
+    SECOND
+}
+
+const secTrain = HourTrain.SECOND
+
+console.log(secTrain)
+
+// 3 przykład
+
+enum ArrKey {
+    LEFT = "left",
+    RIGHT = "right"
+}
+
+const goToRight = ArrKey.RIGHT
+console.log(goToRight)
+
+// Interface
+interface MyPointXandY {
+    x: number,
+    y: number
+} 
+
+const mypoints: MyPointXandY = {x: 20, y: 200}
+console.log(mypoints)
+
+// 2 przykład 
+interface personTrain {
+    firstName: string,
+    lastName: string,
+    nick?: string
+}
+
+const myPersonTrain: personTrain = {firstName: "Tom", lastName: "Kowalski"}
+console.log(myPersonTrain)
+
