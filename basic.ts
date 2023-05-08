@@ -546,3 +546,43 @@ interface personTrain {
 const myPersonTrain: personTrain = {firstName: "Tom", lastName: "Kowalski"}
 console.log(myPersonTrain)
 
+// 3przykład 
+interface MyProduct {
+    name_myproduct: string,
+    product_myprice: number,
+    applyDiscount (discount: number): number
+}
+
+const myShoes: MyProduct = {
+    name_myproduct: "Buty sportowe",
+    product_myprice: 230,
+    applyDiscount(amount: number) {
+        return amount
+    }
+}
+
+console.log(myShoes)
+console.log(myShoes.applyDiscount(22))
+
+// 4 przykład 
+
+interface myDog {
+    nameDog: string,
+    age: number
+}
+
+interface myDog {
+    country: string,
+    bark(): string
+}
+
+const myDogReks: myDog = {
+    nameDog: "Reks",
+    age: 2,
+    country: "Poland",
+    bark() {
+        return "Hau"
+    }
+}
+
+console.log(myDogReks)
