@@ -586,3 +586,22 @@ const myDogReks: myDog = {
 }
 
 console.log(myDogReks)
+
+// 5 przykład Interface + extend
+
+interface myCat {
+    name: string,
+    age: number
+}
+
+interface myCatCity extends myCat {
+    city: string
+}
+
+const myCatYoung: myCatCity = {
+    name: "Kitek",
+    age: 2,
+    city: "POLSKA"
+}
+
+console.log (myCatYoung)
