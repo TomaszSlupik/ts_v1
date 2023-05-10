@@ -605,3 +605,29 @@ const myCatYoung: myCatCity = {
 }
 
 console.log (myCatYoung)
+
+// 6 przykład interface + extend
+
+interface Person {
+    first_name: string
+}
+
+interface Employee {
+    readonly id: number,
+    email: string
+}
+
+interface Engineer extends Person, Employee {
+    level: string,
+    language: string[]
+}
+
+const youngEngineer: Engineer = {
+    first_name: 'Tomy',
+    id: 10,
+    email: 'tony@gmail.com',
+    level: 'easy',
+    language: ['england', 'poland']
+}
+
+console.log(youngEngineer)
